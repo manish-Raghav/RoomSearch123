@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="90dp"
+       android:background="#D5DBDB "
+
+       android:orientation="vertical"
+       app:layout_constraintBottom_toTopOf="@+id/mani"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+
+      <androidx.appcompat.widget.SearchView
+          android:id="@+id/search"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:layout_marginRight="30dp"
+          android:layout_marginLeft="10dp"
+          android:background="#E8FFFFFF"
+          app:queryHint="Search Rooms,pg"
+          tools:ignore="MissingClass" />
+   </LinearLayout>
+
+   <FrameLayout
+       android:id="@+id/mani"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="80dp"
+       android:layout_marginBottom="60dp"
+       android:background="#F7F9F9"
+       app:layout_constraintBottom_toTopOf="@+id/bottem"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="1.0"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+   </FrameLayout>
+
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:id="@+id/bottem"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:background="#D5DBDB"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:itemRippleColor="@color/black"
+       app:menu="@menu/mani" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
