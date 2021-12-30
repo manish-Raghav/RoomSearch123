@@ -1,5 +1,7 @@
 package com.example.roomsearch123;
 
+import android.graphics.Bitmap;
+
 public class InteractiveModeldata {
     private  String image1;
     private String image2;

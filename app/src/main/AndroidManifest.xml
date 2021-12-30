@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RooMSearch123"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".Singleactivity"
+            android:exported="true" />
+        <activity
+            android:name=".Cardshow_img"
+            android:exported="true" />
         <activity
             android:name=".Dataupload"
             android:exported="true" />

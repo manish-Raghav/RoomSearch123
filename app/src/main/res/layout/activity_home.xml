@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F3F0F0"
     tools:context=".Home">
 
 
@@ -22,13 +23,15 @@
       <androidx.appcompat.widget.SearchView
           android:id="@+id/search"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="30dp"
-          android:layout_marginRight="30dp"
+          android:layout_height="60dp"
           android:layout_marginLeft="10dp"
-          android:background="#E8FFFFFF"
-          app:queryHint="Search Rooms,pg"
-          tools:ignore="MissingClass" />
+          android:layout_marginTop="20dp"
+          android:layout_marginRight="30dp"
+
+
+          android:backgroundTint="#171515"
+          app:iconifiedByDefault="false"
+          app:queryHint="Search Rooms,pg" />
    </LinearLayout>
 
    <FrameLayout
@@ -51,10 +54,10 @@
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:background="#D5DBDB"
+       app:itemRippleColor="@color/black"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
-       app:itemRippleColor="@color/black"
        app:menu="@menu/mani" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

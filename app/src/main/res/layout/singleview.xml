@@ -3,23 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FDFFFFFF"
+
     android:elevation="10dp"
     app:cardCornerRadius="10dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:id="@+id/homecard"
+  >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
 
-        android:background="#FDFFFFFF">
+      >
 
 
         <ImageView
             android:id="@+id/cimg"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-
             android:src="@drawable/placeholder" />
 
         <TextView

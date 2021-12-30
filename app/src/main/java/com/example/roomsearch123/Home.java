@@ -3,10 +3,12 @@ package com.example.roomsearch123;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,6 +18,7 @@ public class Home extends AppCompatActivity {
     BottomNavigationView bottemview;
     Intent intent ;
     SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +31,26 @@ public class Home extends AppCompatActivity {
         bottemview = findViewById(R.id.bottem);
         searchView = findViewById(R.id.search);
 
+
         //  recyclerView = findViewById(R.id.re);
 
 
         // recyclerView.setLayoutManager(new LinearLayoutManager(this));
         // sear =findViewById(R.id.sear);
         //  layout =findViewById(R)
+
+          searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+              @Override
+              public boolean onQueryTextSubmit(String query) {
+                  return false;
+              }
+
+              @Override
+              public boolean onQueryTextChange(String newText) {
+                  return false;
+              }
+          });
+
         getSupportFragmentManager().beginTransaction().replace(R.id.mani,new Interactiveview()).commit();// Attached fragment.
 
         bottemview.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
