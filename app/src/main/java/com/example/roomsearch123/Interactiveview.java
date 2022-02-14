@@ -1,5 +1,6 @@
 package com.example.roomsearch123;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +17,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -36,7 +39,7 @@ import java.util.List;
 
 public class Interactiveview extends Fragment {
 
-    private final static String url ="http://192.168.0.111/php/RoomAccess.php";
+    private final static String url ="http://192.168.0.103/php/RoomAccess.php";
     RecyclerView recyclerView;
      List<InteractiveModeldata> list;
      Adapterdata myadapter;
@@ -53,6 +56,7 @@ public class Interactiveview extends Fragment {
 
         //((AppCompatActivity)getActivity()).getSupportActionBar();
         recyclerView = view.findViewById(R.id.re);
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             Showdata();

@@ -9,10 +9,12 @@
         <entry key="..\:/RooMSearch123/app/src/main/res/drawable/ic_wave__10_.xml" value="0.25" />
         <entry key="..\:/RooMSearch123/app/src/main/res/drawable/profile.xml" value="0.25" />
         <entry key="..\:/RooMSearch123/app/src/main/res/drawable/upload.xml" value="0.25" />
+        <entry key="..\:/RooMSearch123/app/src/main/res/layout/acivity_profile.xml" value="0.27291666666666664" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_cardshow_img.xml" value="0.27291666666666664" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_dataupload.xml" value="0.25729166666666664" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_home.xml" value="0.234375" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_main.xml" value="0.2203125" />
+        <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_ptofile.xml" value="0.25729166666666664" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/activity_signup.xml" value="0.33" />
         <entry key="..\:/RooMSearch123/app/src/main/res/layout/fragment_interactiveview.xml" value="0.25729166666666664" />
@@ -24,7 +26,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

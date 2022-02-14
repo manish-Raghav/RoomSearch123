@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,14 @@ import java.util.Map;
 public class SignupActivity extends AppCompatActivity {
     Button btn;
     EditText name, email;
-    private final static String url = "http://192.168.0.111/php/Signup.php";
+    SharedPreferences sp;
+    private final static String url = "http://192.168.0.103/php/Signup.php";
+    private final static String key_name = "name";
+    private final static String key_email ="email";
+    private final static String sharedname ="mydata";
+    Intent intent;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,17 +48,26 @@ public class SignupActivity extends AppCompatActivity {
         //        bundel.putString("email", email.getText().toString());
         //        Imagedataupload fb = new Imagedataupload();
         //        fb.setArguments(bundel);
-
+        sp =getSharedPreferences(sharedname,MODE_PRIVATE);
+             String getem =sp.getString(key_email,null);
+             String getnm = sp.getString(key_name,null);
+             if ( getem !=null && getnm !=null)
+             {
+                 intent =new Intent(SignupActivity.this  ,Dataupload.class);
+//                 nt.putExtra("email" , email.getText().toString().trim());
+                 startActivity(intent);
+             }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                Intent intent = new Intent(SignupActivity.this  ,Dataupload.class);
+                prephere();
+               intent = new Intent(SignupActivity.this  ,Dataupload.class);
                 intent.putExtra("email" , email.getText().toString().trim());
                 startActivity(intent);
 
                 upload();
+
 
 
                 //                Imagedataupload up = new Imagedataupload();
@@ -59,8 +76,19 @@ public class SignupActivity extends AppCompatActivity {
 
 
             }
+
+
         }   );
 
+    }
+
+    private void prephere() {
+
+
+        SharedPreferences.Editor editor =sp.edit();
+        editor.putString(key_name,name.getText().toString());
+        editor.putString(key_email,email.getText().toString());
+        editor.apply();
     }
 
     private void upload() {

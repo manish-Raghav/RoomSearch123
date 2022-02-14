@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Cardshow_img extends AppCompatActivity {
+public class  Cardshow_img extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
