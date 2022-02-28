@@ -18,7 +18,7 @@
 
         android:src="@drawable/placeholder"
         app:layout_constraintEnd_toStartOf="@+id/img2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +28,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="28dp"
 
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="4dp"
         android:src="@drawable/placeholder"
         app:layout_constraintEnd_toStartOf="@+id/img3"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,10 +53,9 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Phone"
+        android:textColorHint="@color/black"
         android:inputType="phone"
-        android:textColor="#373333"
-        android:textColorHint="#4A4343"
-        android:textColorLink="#E1D7D7"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/adress"
         app:layout_constraintEnd_toStartOf="@+id/rent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,7 +84,7 @@
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_marginBottom="36dp"
-        android:hint="what you wnat to say Talent"
+        android:hint="for Grils,boys,things and your point"
         android:textColor="#151414"
         android:textColorHint="#131313"
         android:textColorLink="#DACDCD"
@@ -101,7 +100,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="320dp"
         android:ems="10"
-        android:hint="talent  counting"
+        android:hint="tanent  counting"
         android:inputType="number"
         android:textColor="#201E1E"
         android:textColorHint="#0E0D0D"

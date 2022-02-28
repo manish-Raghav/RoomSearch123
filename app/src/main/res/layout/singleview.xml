@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
+    android:id="@+id/homecard"
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    android:background="#F3F0F0"
     android:elevation="10dp"
     app:cardCornerRadius="10dp"
-    app:cardUseCompatPadding="true"
-    android:id="@+id/homecard"
-  >
+    app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
+        android:background="#F3F0F0"
 
-      >
-
-
+        >
         <ImageView
             android:id="@+id/cimg"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:padding="5dp"
             android:src="@drawable/placeholder" />
 
         <TextView
             android:id="@+id/crent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/cimg"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="215dp"
+            android:layout_marginTop="5dp"
+            android:background="#EDFFFFFF"
             android:text="Rent"
-
             android:textColor="#171616"
-
-            android:textSize="20dp" />
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/ctelant"
+            android:id="@+id/ctanent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="215dp"
+            android:layout_below="@+id/cimg"
+
+            android:layout_marginLeft="100dp"
+
+            android:layout_marginTop="5dp"
             android:text="tanent"
-            android:textColor="#191818"
-
-
-            android:textSize="20dp" />
+            android:textColor="#171616"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/cadress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="215dp"
+            android:layout_below="@+id/crent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
             android:text="adress"
-            android:textColor="#151414"
-
-            android:textSize="20dp" />
+            android:textColor="#171616"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>

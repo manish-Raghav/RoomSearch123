@@ -38,8 +38,8 @@ public class Dataupload extends AppCompatActivity {
     ImageView imge1, imge2, imge3;
     Button btn;
     Bitmap bitmap1, bitmap2, bitmap3;
-    String email;
-    private final static String surl = "http://192.168.0.111/php/RoomUpload.php";
+    String email,myName;
+    private final static String surl = "http://192.168.0.110/php/RoomUpload.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +54,11 @@ public class Dataupload extends AppCompatActivity {
         tlt = findViewById(R.id.talent);
         des = findViewById(R.id.desi);
         getSupportActionBar().hide();
-//        Bundle bundle = this.getArguments();
-//        email = bundle.getString("email");
+
         email = getIntent().getStringExtra("email");
-        //Toast.makeText(getApplicationContext(), email.toString(), Toast.LENGTH_SHORT).show();
+       // myName=getIntent().getStringExtra("myname");
+        //Toast.makeText(getApplicationContext(), name.toString(), Toast.LENGTH_SHORT).show();
+
 
 
 
@@ -154,11 +155,7 @@ public class Dataupload extends AppCompatActivity {
 
                 resultLauncher.launch(intent);
 
-//                Intent intent =new Intent(Intent.ACTION_PICK);
-//                intent.setType("image/*");
-//
-//                resultLauncher.launch(intent);
-                // folow(resultLauncher);
+
 
             }
 
@@ -174,8 +171,7 @@ public class Dataupload extends AppCompatActivity {
                 intent.setType("image/*");
 
                 resultLauncher1.launch(intent);
-                //image1.setImageBitmap(arr.get(1));
-                //  folow(resultLauncher);
+
 
             }
 
@@ -189,8 +185,7 @@ public class Dataupload extends AppCompatActivity {
 
                 resultLauncher2.launch(intent);
 
-                // image2.setImageBitmap(arr.get(2));
-                //folow(resultLauncher);
+
 
             }
 
@@ -231,11 +226,12 @@ public class Dataupload extends AppCompatActivity {
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
 
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "some problrm in server", Toast.LENGTH_SHORT).show();
 
             }
         }
@@ -246,14 +242,18 @@ public class Dataupload extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String ,String> map =new HashMap<>();
                 map.put("email" ,email);
-                map.put("img1" ,encode1);
-                map.put("img2" ,encode2);
-                map.put("img3" ,encode3);
                 map.put("phone" ,phn.getText().toString().trim());
                 map.put("adress" ,adrss.getText().toString().trim());
                 map.put("rent" ,rnt.getText().toString().trim());
                 map.put("tanentcount" ,tlt.getText().toString().trim());
                 map.put("des" ,des.getText().toString().trim());
+                map.put("img1" ,encode1);
+                map.put("img2" ,encode2);
+                map.put("img3" ,encode3);
+
+
+
+                Toast.makeText(getApplicationContext(), "your Data Uploaded", Toast.LENGTH_SHORT).show();
 
 
                 return map;

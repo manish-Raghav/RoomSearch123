@@ -26,7 +26,7 @@ public class SignupActivity extends AppCompatActivity {
     Button btn;
     EditText name, email;
     SharedPreferences sp;
-    private final static String url = "http://192.168.0.103/php/Signup.php";
+    private final static String url = "http://192.168.0.110/php/Signup.php";
     private final static String key_name = "name";
     private final static String key_email ="email";
     private final static String sharedname ="mydata";
@@ -44,18 +44,15 @@ public class SignupActivity extends AppCompatActivity {
         btn = findViewById(R.id.signupbt);
         name = findViewById(R.id.nm);
         email = findViewById(R.id.em);
-        //        Bundle bundel = new Bundle();
-        //        bundel.putString("email", email.getText().toString());
-        //        Imagedataupload fb = new Imagedataupload();
-        //        fb.setArguments(bundel);
-        sp =getSharedPreferences(sharedname,MODE_PRIVATE);
+
+           sp =getSharedPreferences(sharedname,MODE_PRIVATE);
              String getem =sp.getString(key_email,null);
              String getnm = sp.getString(key_name,null);
              if ( getem !=null && getnm !=null)
              {
                  intent =new Intent(SignupActivity.this  ,Dataupload.class);
-//                 nt.putExtra("email" , email.getText().toString().trim());
                  startActivity(intent);
+                 finish();
              }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,15 +61,11 @@ public class SignupActivity extends AppCompatActivity {
                 prephere();
                intent = new Intent(SignupActivity.this  ,Dataupload.class);
                 intent.putExtra("email" , email.getText().toString().trim());
+                //intent.putExtra("myname" ,name.getText().toString().trim());
                 startActivity(intent);
 
                 upload();
 
-
-
-                //                Imagedataupload up = new Imagedataupload();
-                // getChildFragmentManager().beginTransaction().replace(R.id.mani, fb).commit();
-                //    getSupportFragmentManager().beginTransaction().replace(R.id.mk,up).commit();
 
 
             }
@@ -94,20 +87,7 @@ public class SignupActivity extends AppCompatActivity {
     private void upload() {
         String aemail = email.getText().toString().trim();
         String aname = name.getText().toString().trim();
-        //        Call<dataclass> call =APIcreater.getInstance().getApidata().adddata( aemail,aname);
-        //        call.enqueue(new Callback<dataclass>() {
-        //            @Override
-        //            public void onResponse(Call<dataclass> call, Response<dataclass> response) {
-        //                Toast.makeText(getApplicationContext(),response.body().getData(), Toast.LENGTH_SHORT).show();
-        //            }
-        //
-        //            @Override
-        //            public void onFailure(Call<dataclass> call, Throwable t) {
-        //                Toast.makeText(getApplicationContext(), "problem in your API", Toast.LENGTH_LONG).show();
-        //            }
-        //        });
-        //
-        //    }
+
 
 
         StringRequest newrequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

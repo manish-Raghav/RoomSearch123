@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RooMSearch123"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ViewData"
+            android:exported="true" />
+        <activity
             android:name=".Singleactivity"
             android:exported="true" />
         <activity

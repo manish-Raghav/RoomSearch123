@@ -1,6 +1,6 @@
 package com.example.roomsearch123;
 
-import android.content.Context;
+import  android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -42,22 +42,32 @@ public class Adapterdata extends RecyclerView.Adapter<Adapterdata.myviewholderd>
     @Override
     public void onBindViewHolder(@NonNull myviewholderd holder, int position) {
 
-//        byte[] imgurl1 = Base64.decode(data.get(position).getImage1() ,Base64.DEFAULT);
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(imgurl1,0,imgurl1.length);
-//        Glide.with(context).load(bitmap).into(holder.imgw);
-//        //holder.imgw.setImageBitmap(bitmap);
-//          holder.rent.setText(data.get(position).getRent());
-//          holder.count.setText(data.get(position).getTenantcount());
-//          holder.adrss.setText(data.get(position).getAdress());
+
 
 
 
 
         InteractiveModeldata obj = data[position];
-         Glide.with(context).load("http://192.168.0.111/php/imageupload/" +obj.getImage1()).into(holder.imgw);
-          holder.rent.setText(obj.getRent());
-        holder.count.setText(obj.getTenantcount());
+         Glide.with(context).load("http://192.168.0.110/php/imageupload/" + obj.getImg1()).into(holder.imgw);
+          holder.rent.setText("₹"+obj.getRent());
+        holder.count.setText("tanent-" + obj.getTanentcount());
           holder.adrss.setText(obj.getAdress());
+
+
+          holder.imgw.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                    Intent intent = new Intent(context,ViewData.class);
+                    intent.putExtra("image1",obj.getImg1());
+                    intent.putExtra("image2",obj.getImg2());
+                    intent.putExtra("image1",obj.getImg3());
+                    intent.putExtra("Name",obj.getName());
+                     intent.putExtra("phone",obj.getPhone());
+                     intent.putExtra("Desc",obj.getDis());
+                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                     context.startActivity(intent);
+              }
+          });
     }
 
     @Override
@@ -74,7 +84,7 @@ public class Adapterdata extends RecyclerView.Adapter<Adapterdata.myviewholderd>
             super(itemView);
             imgw =itemView.findViewById(R.id.cimg);
             rent =itemView.findViewById(R.id.crent);
-            count =itemView.findViewById(R.id.ctelant);
+            count =itemView.findViewById(R.id.ctanent);
             adrss =itemView.findViewById(R.id.cadress);
 
 

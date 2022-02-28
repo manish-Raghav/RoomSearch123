@@ -24,7 +24,7 @@ public class Ptofile extends AppCompatActivity {
         tbutton=findViewById(R.id.t2);
 
         getSupportActionBar().hide();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         sp =getSharedPreferences(sharedname,MODE_PRIVATE);
 
         String getnm = sp.getString(key_name,null);
@@ -32,12 +32,14 @@ public class Ptofile extends AppCompatActivity {
         tbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 SharedPreferences.Editor ed =sp.edit();
                 if (sp.contains(key_email) && sp.contains(key_name))
                 {
                     ed.remove(key_email);
                     ed.remove(key_name);
                     tx.setText("");
+                    ed.commit();
                 }
             }
         });
