@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.roomsearch123.R;
+
 public class  Cardshow_img extends AppCompatActivity {
 
     @Override

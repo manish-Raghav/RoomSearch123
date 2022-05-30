@@ -7,12 +7,12 @@
     android:background="#F3F0F0"
     tools:context=".Home">
 
-
    <LinearLayout
+       android:id="@+id/linearLayout"
        android:layout_width="match_parent"
        android:layout_height="90dp"
-       android:background="#D5DBDB "
 
+       android:background="#39A78E "
        android:orientation="vertical"
        app:layout_constraintBottom_toTopOf="@+id/mani"
        app:layout_constraintEnd_toEndOf="parent"
@@ -37,15 +37,16 @@
    <FrameLayout
        android:id="@+id/mani"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_marginTop="80dp"
-       android:layout_marginBottom="60dp"
+       android:layout_height="610dp"
+
        android:background="#F7F9F9"
        app:layout_constraintBottom_toTopOf="@+id/bottem"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="1.0"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent">
+
+       app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+       app:layout_constraintVertical_bias="1.0">
 
    </FrameLayout>
 
@@ -53,7 +54,7 @@
        android:id="@+id/bottem"
        android:layout_width="match_parent"
        android:layout_height="60dp"
-       android:background="#D5DBDB"
+       android:background="#39A78E"
        app:itemRippleColor="@color/black"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"

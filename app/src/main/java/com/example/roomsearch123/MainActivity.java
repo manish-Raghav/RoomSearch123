@@ -14,14 +14,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
         //  getWindow().setFlags(windowManager().LayoutParams.FLAG_FULLSCREEN,windowManager().LayoutParams.FLAG_FULLSCREEN);
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent =new Intent(MainActivity.this ,Home.class);
+                Intent intent =new Intent(MainActivity.this , Home.class);
                 startActivity(intent);
                 finish();
             }

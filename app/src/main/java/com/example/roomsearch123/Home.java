@@ -1,15 +1,12 @@
 package com.example.roomsearch123;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +15,7 @@ public class Home extends AppCompatActivity {
     BottomNavigationView bottemview;
     Intent intent ;
     SearchView searchView;
+     //   Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +24,12 @@ public class Home extends AppCompatActivity {
 
 
 
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bottemview = findViewById(R.id.bottem);
         searchView = findViewById(R.id.search);
-
+      //  toolbar =findViewById(R.id.toolbar);
+      //  setSupportActionBar(toolbar);
 
         //  recyclerView = findViewById(R.id.re);
 
@@ -39,34 +38,37 @@ public class Home extends AppCompatActivity {
         // sear =findViewById(R.id.sear);
         //  layout =findViewById(R)
 
-          searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-              @Override
-              public boolean onQueryTextSubmit(String query) {
-                  return false;
-              }
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
-              @Override
-              public boolean onQueryTextChange(String newText) {
-                  return false;
-              }
-          });
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+             //   getSupportFragmentManager().beginTransaction().replace(R.id.mani,new Searchfrg()).commit();
+
+                return false;
+            }
+        });
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mani,new Interactiveview()).commit();// Attached fragment.
 
         bottemview.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
                 // Fragment temp =null;
                 switch (item.getItemId())
                 {
                     case R.id.upload:
                         // temp =new Uploadfrag();
-                            intent =new Intent(Home.this ,SignupActivity.class);
-                          startActivity(intent);
+                        intent =new Intent(Home.this , SignupActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.profile:
-                           intent  = new Intent(Home.this, Ptofile.class);
-                           startActivity(intent);
+                        intent  = new Intent(Home.this, Ptofile.class);
+                        startActivity(intent);
                         break;
                 }
 

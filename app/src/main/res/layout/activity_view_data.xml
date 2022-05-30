@@ -14,51 +14,73 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/imgmn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="264dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.viewpager2.widget.ViewPager2>
 
 
     <TextView
         android:id="@+id/tx1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
         android:text="Name"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tx2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgslide"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.573" />
 
     <TextView
         android:id="@+id/tx2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="40dp"
         android:text="phone"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
 
+        android:textColorHint="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tx3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintBottom_toTopOf="@+id/txt3"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tx3"
+        android:id="@+id/tx4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="128dp"
         android:text="Description"
-        android:textColorHint="@color/black"
         android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:text="Adressh"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/tx4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

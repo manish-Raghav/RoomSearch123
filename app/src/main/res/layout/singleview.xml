@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homecard"
     android:layout_width="wrap_content"
     android:layout_height="250dp"
@@ -11,10 +12,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="550dp"
         android:background="#F3F0F0"
 
         >
+
         <ImageView
             android:id="@+id/cimg"
             android:layout_width="match_parent"
@@ -55,14 +57,23 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/crent"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="9dp"
             android:text="adress"
             android:textColor="#171616"
             android:textSize="10sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/imag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
     </RelativeLayout>
+
+
+
 
 
 </androidx.cardview.widget.CardView>

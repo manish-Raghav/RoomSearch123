@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,13 +26,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.roomsearch123.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Dataupload extends AppCompatActivity {
+public class    Dataupload extends AppCompatActivity {
 
     EditText phn, rnt, tlt, adrss, des;
 
@@ -39,7 +41,8 @@ public class Dataupload extends AppCompatActivity {
     Button btn;
     Bitmap bitmap1, bitmap2, bitmap3;
     String email,myName;
-    private final static String surl = "http://192.168.0.110/php/RoomUpload.php";
+    private final static String surl = "http://192.168.1.3/php/RoomUpload.php";
+    Intent sb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +56,11 @@ public class Dataupload extends AppCompatActivity {
         rnt = findViewById(R.id.rent);
         tlt = findViewById(R.id.talent);
         des = findViewById(R.id.desi);
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
 
         email = getIntent().getStringExtra("email");
-       // myName=getIntent().getStringExtra("myname");
-        //Toast.makeText(getApplicationContext(), name.toString(), Toast.LENGTH_SHORT).show();
+         myName=getIntent().getStringExtra("myname");
+      //  Toast.makeText(getApplicationContext(), myName.toString(), Toast.LENGTH_SHORT).show();
 
 
 
@@ -67,6 +70,12 @@ public class Dataupload extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Serverdata();
+
+//                Intent intent = new Intent(Dataupload.this ,Home.class);
+//                startActivity(intent);
+
+
+
 
 
             }
@@ -207,6 +216,15 @@ public class Dataupload extends AppCompatActivity {
         String encode2 = Base64.encodeToString(secondimg, Base64.DEFAULT);
         String encode3 = Base64.encodeToString(thirdimg, Base64.DEFAULT);
 
+        Toast.makeText(this, encode1.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, encode2.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, encode3.toString(), Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
 //        Call<Insertdata> call = APIcreater.getInstance().getApidata().imagedata(email, phn.getText().toString(), adrss.getText().toString(), Integer.parseInt(rnt.getText().toString()), Integer.parseInt(tlt.getText().toString()), des.getText().toString(), encode1, encode2, encode3);
 //        call.enqueue(new Callback<Insertdata>() {
 //            @Override
@@ -250,10 +268,14 @@ public class Dataupload extends AppCompatActivity {
                 map.put("img1" ,encode1);
                 map.put("img2" ,encode2);
                 map.put("img3" ,encode3);
+                map.put("mane",myName);
+
+                //Toast.makeText(, "", Toast.LENGTH_SHORT).show();
 
 
 
-                Toast.makeText(getApplicationContext(), "your Data Uploaded", Toast.LENGTH_SHORT).show();
+
+               // Toast.makeText(getApplicationContext(), "your Data Uploaded", Toast.LENGTH_SHORT).show();
 
 
                 return map;
@@ -263,5 +285,7 @@ public class Dataupload extends AppCompatActivity {
         };
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(newrequest);
+        sb =new Intent(Dataupload.this,Home.class);
+        startActivity(sb);
     }
 }

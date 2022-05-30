@@ -21,8 +21,7 @@ public class Singleactivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intentm = new Intent(.this ,Cardshow_img.class);
-//                startActivity(intentm);
+
             }
         });
 
